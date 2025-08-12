@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"reloaded/functions"
 	"strings"
 )
 
@@ -38,5 +39,9 @@ func main() {
 	}
 
 	fmt.Println(bytes)
+
+	strarr := reloaeded.BytesToStrArray(bytes)
+
+	fmt.Println(strarr)
 
 }
