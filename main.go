@@ -40,8 +40,9 @@ func main() {
 
 	fmt.Println(bytes)
 
-	strarr := reloaeded.BytesToStrArray(bytes)
-
+	strarr := reloaded.BytesToStrArray(bytes)
+	fmt.Println(strarr)
+	strarr = reloaded.CommandFix(strarr)
 	fmt.Println(strarr)
 
 }

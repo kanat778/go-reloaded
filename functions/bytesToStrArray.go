@@ -1,4 +1,4 @@
-package reloaeded
+package reloaded
 
 func BytesToStrArray(bytes []byte) []string {
 	slice := []string{}
