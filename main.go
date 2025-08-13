@@ -42,4 +42,24 @@ func main() {
 
 	fmt.Println("command Fix = ", strarr)
 
+	for ind, str := range strarr {
+		if reloaded.IsCommand(str) {
+			if ind == 0 {
+				fmt.Println("Command can be applied only to word before it")
+				return
+			}
+			command, index := reloaded.CommandInfo(str)
+
+			if command == "bin" && index != 1 {
+				fmt.Println("Error: bin command can not handle any parameters")
+				return
+			}
+			if command == "hex" && index != 1 {
+				fmt.Println("Error: hex command can not handle any parameters")
+				return
+			}
+
+		}
+	}
+
 }
