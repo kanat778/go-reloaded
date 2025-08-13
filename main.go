@@ -20,8 +20,6 @@ func main() {
 		return
 	}
 
-	fmt.Println(args)
-
 	if !strings.Contains(args[0], ".txt") || !strings.Contains(args[1], ".txt") {
 		fmt.Println("ERROR: Invalid datatype of arguments.Please use .txt notation")
 		return
@@ -38,11 +36,10 @@ func main() {
 		err.Error()
 	}
 
-	fmt.Println(bytes)
-
 	strarr := reloaded.BytesToStrArray(bytes)
-	fmt.Println(strarr)
+	fmt.Println("string array = ", strarr)
 	strarr = reloaded.CommandFix(strarr)
-	fmt.Println(strarr)
+
+	fmt.Println("command Fix = ", strarr)
 
 }
