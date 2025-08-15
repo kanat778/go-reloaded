@@ -71,6 +71,16 @@ func main() {
 							strarr[i-1] = strings.ToUpper(strarr[i-1])
 							index--
 						}
+						if command == "low" {
+							strarr[i-1] = strings.ToLower(strarr[i-1])
+							index--
+						}
+
+						if command == "cap" {
+							strarr[i-1] = strings.ToLower(strarr[i-1])
+							strarr[i-1] = strings.Title(strarr[i-1])
+							index--
+						}
 					}
 				}
 			}
