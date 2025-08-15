@@ -66,11 +66,14 @@ func main() {
 				return
 			} else {
 				for i := ind; i > 0 && index > 0; i-- {
-					fmt.Println("oo")
+					if !reloaded.IsPunc(strarr[i-1]) {
+						if command == "up" {
+							strarr[i-1] = strings.ToUpper(strarr[i-1])
+							index--
+						}
+					}
 				}
 			}
-
 		}
 	}
-
 }
