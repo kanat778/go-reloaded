@@ -58,6 +58,17 @@ func main() {
 				fmt.Println("Error: hex command can not handle any parameters")
 				return
 			}
+			if index == 0 {
+				fmt.Println("Error: invalid command parameter. Please use a positive number as the parameter")
+				return
+			} else if index > ind {
+				fmt.Println("Error: used invalid command parameter. Please check if parameter is bigger than words quantity before command")
+				return
+			} else {
+				for i := ind; i > 0 && index > 0; i-- {
+					fmt.Println("oo")
+				}
+			}
 
 		}
 	}

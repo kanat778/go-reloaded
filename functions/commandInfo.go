@@ -1,12 +1,19 @@
 package reloaded
 
 import (
+	"fmt"
 	"regexp"
 	"strconv"
 )
 
 func CommandInfo(s string) (string, int) {
-	out_str := "DIDARS_GOOD_JOKE"
+
+	out_str := ""
+
+	fmt.Println("Command Info ===", s[:3])
+
+	fmt.Println("Command Info2 ===", s[:4])
+
 	if s[:3] == "(up" {
 		out_str = "up"
 	}

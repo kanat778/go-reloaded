@@ -1,1 +1,1 @@
-it (cap,1) was the best of times.
+it  was (up,1) the best of times.
