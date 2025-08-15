@@ -37,9 +37,10 @@ func main() {
 	}
 
 	strarr := reloaded.BytesToStrArray(bytes)
-	fmt.Println("string array = ", strarr)
+	//fmt.Println("string array = ", strarr)
 	strarr = reloaded.CommandFix(strarr)
-
+	strarr = reloaded.ArticleFix(strarr)
+	//fmt.Println("ArticleFix = ", articleFix)
 	fmt.Println("command Fix = ", strarr)
 
 	for ind, str := range strarr {
@@ -86,4 +87,5 @@ func main() {
 			}
 		}
 	}
+	fmt.Println(strarr)
 }
