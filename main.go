@@ -88,4 +88,10 @@ func main() {
 		}
 	}
 	fmt.Println(strarr)
+
+	resHex := reloaded.AtoiBase("4F", "0123456789ABCDEF")
+	fmt.Println("hex =", resHex)
+
+	resBin := reloaded.AtoiBase("10", "01")
+	fmt.Println("bin =", resBin)
 }
