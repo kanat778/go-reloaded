@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"reloaded/functions"
+	"strconv"
 	"strings"
 )
 
@@ -42,6 +43,8 @@ func main() {
 	strarr = reloaded.ArticleFix(strarr)
 	//fmt.Println("ArticleFix = ", articleFix)
 	fmt.Println("command Fix = ", strarr)
+
+	res := 0
 
 	for ind, str := range strarr {
 		if reloaded.IsCommand(str) {
@@ -82,6 +85,27 @@ func main() {
 							strarr[i-1] = strings.Title(strarr[i-1])
 							index--
 						}
+						if command == "bin" {
+							res = reloaded.AtoiBase(strarr[i-1], "01")
+							if res != 0 {
+								strarr[i-1] = strconv.Itoa(res)
+								index--
+							} else {
+								fmt.Println("Error: used invalid command argument\nCommand: bin")
+								return
+							}
+						}
+						if command == "hex" {
+							res = reloaded.AtoiBase(strarr[i-1], "0123456789ABCDEF")
+							if res != 0 {
+								strarr[i-1] = strconv.Itoa(res)
+								index--
+							} else {
+								fmt.Println("Error: used invalid command argument\nCommand: hex")
+								return
+							}
+
+						}
 					}
 				}
 			}
@@ -89,9 +113,10 @@ func main() {
 	}
 	fmt.Println(strarr)
 
-	resHex := reloaded.AtoiBase("4F", "0123456789ABCDEF")
-	fmt.Println("hex =", resHex)
+	//resHex := reloaded.AtoiBase("4F", "0123456789ABCDEF")
+	//fmt.Println("hex =", resHex)
 
-	resBin := reloaded.AtoiBase("10", "01")
-	fmt.Println("bin =", resBin)
+	//resBin := reloaded.AtoiBase("1011", "01")
+	//fmt.Println("bin =", resBin)
+
 }
