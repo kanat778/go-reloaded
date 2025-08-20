@@ -42,7 +42,7 @@ func main() {
 	strarr = reloaded.CommandFix(strarr)
 	strarr = reloaded.ArticleFix(strarr)
 	//fmt.Println("ArticleFix = ", articleFix)
-	fmt.Println("command Fix = ", strarr)
+	//fmt.Println("command Fix = ", strarr)
 
 	res := 0
 
@@ -104,19 +104,40 @@ func main() {
 								fmt.Println("Error: used invalid command argument\nCommand: hex")
 								return
 							}
-
 						}
 					}
 				}
 			}
 		}
 	}
-	fmt.Println(strarr)
+
+	//if reloaded.QuotesPair(strarr) {
+	//	//fmt.Println("---------------------------")
+	//	strarr = reloaded.QuotesFix(strarr)
+	//} else {
+	//	fmt.Println("Can not be done, quotes are not paired")
+	//	return
+	//}
+	fmt.Println("Array = ", strarr)
+	fmt.Println("----------------------------------------------------------------------------------------------")
+
+	strarr = reloaded.Punc(strarr)
+
+	fmt.Println("Finish =", strarr)
 
 	//resHex := reloaded.AtoiBase("4F", "0123456789ABCDEF")
 	//fmt.Println("hex =", resHex)
 
 	//resBin := reloaded.AtoiBase("1011", "01")
 	//fmt.Println("bin =", resBin)
-
+	towrite := ""
+	for _, v := range strarr {
+		if !reloaded.IsCommand(v) {
+			towrite += v
+			if v != "\n" {
+				towrite += " "
+			}
+		}
+	}
+	os.WriteFile(args[1], []byte(towrite), 0644)
 }
