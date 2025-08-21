@@ -111,13 +111,13 @@ func main() {
 		}
 	}
 
-	//if reloaded.QuotesPair(strarr) {
-	//	//fmt.Println("---------------------------")
-	//	strarr = reloaded.QuotesFix(strarr)
-	//} else {
-	//	fmt.Println("Can not be done, quotes are not paired")
-	//	return
-	//}
+	if reloaded.QuotesPair(strarr) {
+		//fmt.Println("---------------------------")
+		strarr = reloaded.QuotesFix(strarr)
+	} else {
+		fmt.Println("Can not be done, quotes are not paired")
+		return
+	}
 	fmt.Println("Array = ", strarr)
 	fmt.Println("----------------------------------------------------------------------------------------------")
 
