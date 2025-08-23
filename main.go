@@ -118,12 +118,18 @@ func main() {
 		fmt.Println("Can not be done, quotes are not paired")
 		return
 	}
-	fmt.Println("Array = ", strarr)
-	fmt.Println("----------------------------------------------------------------------------------------------")
+	//fmt.Println("Array = ", strarr)
 
 	strarr = reloaded.Punc(strarr)
+	//fmt.Println("fix = ", strarr)
+	for k := 0; k < len(strarr); k++ {
+		fmt.Println(strarr[k])
 
-	fmt.Println("Finish =", strarr)
+	}
+	fmt.Println("----------------------------------------------------------------------------------------------")
+	strarr = reloaded.BracketsFix(strarr)
+
+	//fmt.Println("Finish =", strarr)
 
 	//resHex := reloaded.AtoiBase("4F", "0123456789ABCDEF")
 	//fmt.Println("hex =", resHex)
